@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<head>
+	<script src="js/jquery-2.1.4.min.js"></script>
+	<script src="js/firebase.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+		var ref = new Firebase("https://sewapinjam.firebaseio.com/");
+		/*
+		ref.set({
+			akun: {
+				fulan: {
+					nama: "Abdul Fulan",
+					email: "fulan@gmail.com",
+					telp: "089900992312",
+					alamat: "Jl. Setia Budi no. 10, Bandung",
+					password: "fulan"
+				},
+				fulana: {
+					nama: "Siti Fulana",
+					email: "fulana@gmail.com",
+					telp: "089900992312",
+					alamat: "Jl. Coblong no. 10, Bandung",
+					password: "fulana"
+				}
+			},
+			barang: {
+				kamera_canon_x80: {
+					id_barang: "kamera_canon_x80",
+					nama: "Kamera Canon X80",
+					sewa: "5000 per hari",
+					deskripsi: "sebuah kamera",
+					jumlah: 1,
+					url_foto: "",
+					status: "available",
+					id_akun: "fulan@gmail.com"
+				}
+			},
+			pinjaman: {
+				pinjaman1: {
+					id_pinjaman: "pinjaman1",
+					tgl_pinjam: "2015-08-20",
+					lama: "10",
+					jumlah: 1,
+					catatan: "",
+					status: "dipinjam",
+					id_barang: "kamera_canon_x80",
+					peminjam: "fulana@gmail.com",
+					pemilik: "fulan@gmail.com"
+				}
+			},
+			notifikasi: {
+				notif1: {
+					id_notif: "notif1",
+					jenis: "pengingat",
+					status: "aktif",
+					id_pinjaman: "pinjaman1"
+				}
+			}
+		});
+		*/
+
+		/*ref.update({
+			barang: {
+				kamera_canon_x80: {
+					nama: "Kamera Canon X80",
+					sewa: "5000 per hari",
+					deskripsi: "sebuah kamera",
+					jumlah: 1,
+					url_foto: "",
+					status: "available",
+					id_akun: "fulan"
+				}
+			}
+		});*/
+
+		/*ref.on("value", function(res){
+			var hasil = res.val();
+			console.log(hasil.barang);
+		});*/
+	</script>
+</body>
+</html>
