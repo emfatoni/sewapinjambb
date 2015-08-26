@@ -40,6 +40,7 @@ app.controller('LoginCtrl', function($scope, $filter, KelolaSvc){
 	// variabel
 	$scope.akuns = {};
 	$scope.barangs = {};
+	$scope.notifs = {};
 	$scope.temp_akun = {
 		nama: "",
 		email: "",
@@ -80,9 +81,16 @@ app.controller('LoginCtrl', function($scope, $filter, KelolaSvc){
 			$scope.barangs = res;
 		});
 	}
+	$scope.get_notifs = function(){
+		var req = KelolaSvc.all('notifikasi');
+		req.success(function(res){
+			$scope.notifs = res;
+		});
+	}
 
 	$scope.get_akuns();
 	$scope.get_barangs();
+	$scope.get_notifs();
 
 	$scope.get_akun = function(emailnya){
 		var terfilter = [];

@@ -134,6 +134,9 @@
                 </div>
             </div>
             <div class="ui-content">
+                <ul data-role="listview">
+                    <li class="ui-li-static ui-body-inherit" ng-repeat="notif in notifs"><i class="fa fa-bell-o" ng-show="notif.jenis=='pengingat'"></i><i class="fa fa-bell" ng-show="notif.jenis=='terlambat'"></i><i class="fa fa-question-circle" ng-show="notif.jenis=='request'"></i> {{notif.isi}}</li>
+                </ul>
             </div>
         </div>
 
