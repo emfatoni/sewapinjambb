@@ -27,6 +27,7 @@
 
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
+        <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
 
         <script src="js/jquery-2.1.4.min.js"></script>
         <script src="js/jquery.mobile-1.4.5.min.js"></script>
@@ -83,6 +84,112 @@
             <div data-role="footer">
             </div>
         </div><!-- end of daftar page -->
+
+        <!-- beranda page -->
+        <div data-role="page" id="page-beranda">
+            <div data-role="header" data-theme="b" data-shadow="false">
+                <h1>Beranda</h1>
+                <a href="#page-user" data-icon="user" class="ui-btn-right">Akun</a>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a class="ui-btn-active" data-icon="home" href="#page-beranda">Beranda</a></li>
+                        <li><a data-icon="mail" href="#page-notif">Notif</a></li>
+                        <li><a data-icon="recycle" href="#page-pinjaman">Pinjaman</a></li>
+                        <li><a data-icon="grid" href="#page-barang">Barang</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ui-content">
+                <div class="ui-body ui-body-a" ng-repeat="barang in barangs" style="margin: 10px 0px">
+                    <h1>{{barang.nama}}</h1>
+                    <img src="{{barang.url_foto}}" style="width: 100%; margin-top: 10px">
+                    <p>
+                        <p style="text-align: center"><em>{{barang.deskripsi}}</em></p>
+                        <span><i class="fa fa-user" style="margin-right: 5px"></i><a href="#">{{barang.id_akun}}</a></span>
+                        <br>
+                        <span><i class="fa fa-money" style="margin-right: 5px"></i>{{barang.sewa}}</span>
+                        <br>
+                        <span><i class="fa fa-files-o" style="margin-right: 5px"></i>{{barang.jumlah}} item</span>
+                        <br>
+                        <span><i class="fa fa-info-circle" style="margin-right: 5px"></i>1 {{barang.status}}</span>
+                        <br>
+                        <button class="ui-btn ui-btn-b">Book!</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- notif page -->
+        <div data-role="page" id="page-notif">
+            <div data-role="header" data-theme="b">
+                <h1>Notifikasi</h1>
+                <a href="#page-user" data-icon="user" class="ui-btn-right">Akun</a>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a data-icon="home" href="#page-beranda">Beranda</a></li>
+                        <li><a class="ui-btn-active" data-icon="mail" href="#page-notif">Notif</a></li>
+                        <li><a data-icon="recycle" href="#page-pinjaman">Pinjaman</a></li>
+                        <li><a data-icon="grid" href="#page-barang">Barang</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ui-content">
+            </div>
+        </div>
+
+        <!-- pinjaman page -->
+        <div data-role="page" id="page-pinjaman">
+            <div data-role="header" data-theme="b">
+                <h1>Pinjaman</h1>
+                <a href="#page-user" data-icon="user" class="ui-btn-right">Akun</a>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a data-icon="home" href="#page-beranda">Beranda</a></li>
+                        <li><a data-icon="mail" href="#page-notif">Notif</a></li>
+                        <li><a class="ui-btn-active" data-icon="recycle" href="#page-pinjaman">Pinjaman</a></li>
+                        <li><a data-icon="grid" href="#page-barang">Barang</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ui-content">
+            </div>
+        </div>
+
+        <!-- barang page -->
+        <div data-role="page" id="page-barang">
+            <div data-role="header" data-theme="b">
+                <h1>Barang</h1>
+                <a href="#page-user" data-icon="user" class="ui-btn-right">Akun</a>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a data-icon="home" href="#page-beranda">Beranda</a></li>
+                        <li><a data-icon="mail" href="#page-notif">Notif</a></li>
+                        <li><a data-icon="recycle" href="#page-pinjaman">Pinjaman</a></li>
+                        <li><a class="ui-btn-active" data-icon="grid" href="#page-barang">Barang</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ui-content">
+            </div>
+        </div>
+
+        <!-- akun page -->
+        <div data-role="page" id="page-user">
+            <div data-role="header" data-theme="b">
+                <h1>Akun</h1>
+                <a href="#page-user" data-icon="user" class="ui-btn-right ui-btn-active">Akun</a>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a data-icon="home" href="#page-beranda">Beranda</a></li>
+                        <li><a data-icon="mail" href="#page-notif">Notif</a></li>
+                        <li><a data-icon="recycle" href="#page-pinjaman">Pinjaman</a></li>
+                        <li><a data-icon="grid" href="#page-barang">Barang</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ui-content">
+            </div>
+        </div>
     </body>
     <script type="text/javascript">
         /*var ref = new Firebase("https://sewapinjam.firebaseio.com/");

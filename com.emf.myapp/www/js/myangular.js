@@ -39,6 +39,7 @@ app.controller('LoginCtrl', function($scope, $filter, KelolaSvc){
 	
 	// variabel
 	$scope.akuns = {};
+	$scope.barangs = {};
 	$scope.temp_akun = {
 		nama: "",
 		email: "",
@@ -73,8 +74,15 @@ app.controller('LoginCtrl', function($scope, $filter, KelolaSvc){
 			$scope.akuns = res;
 		});
 	}
+	$scope.get_barangs = function(){
+		var req = KelolaSvc.all('barang');
+		req.success(function(res){
+			$scope.barangs = res;
+		});
+	}
 
 	$scope.get_akuns();
+	$scope.get_barangs();
 
 	$scope.get_akun = function(emailnya){
 		var terfilter = [];
@@ -97,7 +105,7 @@ app.controller('LoginCtrl', function($scope, $filter, KelolaSvc){
 		if($scope.temp_akun){
 			if($scope.login.password === $scope.temp_akun.password){
 				alert("Selamat Datang, "+$scope.temp_akun.nama);
-				window.location.href = "beranda.html";
+				window.location.href = "#page-beranda";
 			}else{
 				alert("Password salah!");
 			}
